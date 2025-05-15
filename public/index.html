@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Tráfego - Jaraguá do Sul</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Painel de Controle -->
+      <div class="control-panel">
+        <div class="panel-header">
+          <h1><i class="fas fa-map-marked-alt"></i> Estudo de Traçado</h1>
+          <p class="subtitle">Jaraguá do Sul - SC</p>
+        </div>
+
+        <div class="control-section">
+          <h2><i class="fas fa-sliders-h"></i> Controles</h2>
+          <div class="control-group">
+            <label class="switch-container">
+              <span class="switch">
+                <input type="checkbox" id="toggleHeatmap" checked />
+                <span class="slider round"></span>
+              </span>
+              <span class="switch-label">Mapa de Calor</span>
+            </label>
+          </div>
+          <div class="control-group">
+            <label class="switch-container">
+              <span class="switch">
+                <input type="checkbox" id="toggleMarkers" checked />
+                <span class="slider round"></span>
+              </span>
+              <span class="switch-label">Marcadores</span>
+            </label>
+          </div>
+        </div>
+        <div class="control-section">
+          <h2><i class="fas fa-filter"></i> Filtros</h2>
+          <div class="filter-buttons">
+            <button
+              id="toggleHospitais"
+              class="filter-btn active"
+              data-layer="hospitais"
+            >
+              <i class="fas fa-hospital"></i> Hospitais
+            </button>
+            <button
+              id="toggleEscolas"
+              class="filter-btn active"
+              data-layer="escolas"
+            >
+              <i class="fas fa-school"></i> Escolas
+            </button>
+            <button
+              id="toggleIndustrias"
+              class="filter-btn active"
+              data-layer="industrias"
+            >
+              <i class="fas fa-industry"></i> Indústrias
+            </button>
+            <button
+              id="toggleComercial"
+              class="filter-btn active"
+              data-layer="comercial"
+            >
+              <i class="fas fa-store"></i> Comércio
+            </button>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <h2><i class="fas fa-route"></i> Rotas</h2>
+          <div class="route-controls">
+            <button id="markStart" class="route-btn">
+              <i class="fas fa-map-marker-alt"></i> Início
+            </button>
+            <button id="markEnd" class="route-btn">
+              <i class="fas fa-flag-checkered"></i> Destino
+            </button>
+            <button id="calculateRoute" class="route-btn primary">
+              <i class="fas fa-directions"></i> Calcular
+            </button>
+            <button id="calculateAlternativeRoute" class="route-btn primary">
+              <i class="fas fa-directions"></i> Calcular Rota Alternativa
+            </button>
+            <button id="clearRoute" class="route-btn danger">
+              <i class="fas fa-trash-alt"></i> Limpar
+            </button>
+          </div>
+        </div>
+
+        <div class="legend">
+          <h2><i class="fas fa-info-circle"></i> Legenda</h2>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #ff0000"></span>
+            <span>Escolas</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #00ff00"></span>
+            <span>Hospitais</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #0000ff"></span>
+            <span>Áreas Comerciais</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #800080"></span>
+            <span>Indústrias</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color heatmap-gradient"></span>
+            <span>Intensidade de Tráfego</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div id="map"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
