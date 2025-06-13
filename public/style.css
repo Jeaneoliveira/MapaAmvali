@@ -250,11 +250,11 @@ input:checked + .slider + .switch-label {
 .heatmap-gradient {
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 255, 0),
-    rgb(0, 180, 255),
-    rgb(0, 255, 0),
+    rgba(0, 242, 255, 0),
+    rgb(8, 86, 255),
+    rgb(0, 234, 255),
     rgb(255, 255, 0),
-    rgb(255, 140, 0),
+    rgb(0, 255, 21),
     rgb(255, 0, 0)
   );
   border-radius: 10px;
@@ -349,4 +349,14 @@ input:checked + .slider + .switch-label {
 
 #calculateRoute .fa-spinner {
   margin-right: 8px;
+}
+.route-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

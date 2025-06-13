@@ -5,22 +5,23 @@
 ![Progresso](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 
 **Visualização e gerenciamento de tráfego urbano**  
-Um sistema completo para análise de padrões de tráfego, gerenciamento de vias e planejamento urbano em Jaraguá do Sul/SC.
+Um sistema em desenvolvimento para análise de padrões de tráfego, gerenciamento de vias e planejamento urbano em Jaraguá do Sul/SC.
 
 ## ![Screenshot do Mapa](public/imagens/Tela.inicial.png)
 
 ## ✨ Funcionalidades (em desenvolvimento)
 
-- ✅ **Gerenciamento de vias** (etapa atual):
+> ✅ **Gerenciamento de vias** (etapa atual):
+
 - Mapa de calor de intensidade de tráfego
-- Filtros dinâmicos por tipo de local (hospitais, escolas, indústrias)
-- Cálculo de rotas (principal e alternativa)
 - Integração completa com banco de dados PostgreSQL + PostGIS
 
 > 🔧 Funcionalidades futuras:
 
+- Filtros dinâmicos por tipo de local (hospitais, escolas, indústrias)
+- Cálculo de rotas (principal e alternativa)
 - Visualização por tipo de pavimentação (asfalto, terra, paralelepípedo)
-- Importação de rotas do Google Earth (`.kml`, `.gpx`)
+- Importação de rotas do Google Earth (dados fornecidos pela Amvali) nos formatos .kml e .gpx
 - Edição e criação de novas ruas
 
 ---
@@ -86,7 +87,7 @@ Um sistema completo para análise de padrões de tráfego, gerenciamento de vias
 4. **Inicie o servidor**
 
    ```bash
-   npm start
+    npm run start:dev
    ```
 
 5. **Abra no navegador**
